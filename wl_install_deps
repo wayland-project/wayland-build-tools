@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ~/bin/wl_defines.sh
+. $HOME/.config/wayland-build-tools/wl_defines.sh
 
 # generic build dependencies for ubuntu
 sudo apt-get -y install autoconf automake bison debhelper dpkg-dev flex

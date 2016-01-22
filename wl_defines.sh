@@ -1,5 +1,5 @@
 export INCLUDE_XWAYLAND=1
-export WLROOT=$HOME/build/Wayland
+export WLROOT=$HOME/Wayland
 export WLD=$WLROOT/install   # change this to another location if you prefer
 
 if [ "$(uname -i)" = "i386" ]; then

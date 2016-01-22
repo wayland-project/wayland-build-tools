@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ~/bin/wl_defines.sh
+. $HOME/.config/wayland-build-tools/wl_defines.sh
 
 if [ ! -e $WLROOT ]; then
     exit 1
