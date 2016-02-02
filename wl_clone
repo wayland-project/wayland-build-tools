@@ -54,6 +54,7 @@ clone_or_update git://anongit.freedesktop.org/cairo
 clone_or_update git://git.sv.gnu.org/libunwind
 clone_or_update git://anongit.freedesktop.org/libevdev
 clone_or_update git://anongit.freedesktop.org/wayland/wayland-protocols
+clone_or_update git://git.code.sf.net/p/linuxwacom/libwacom
 clone_or_update git://anongit.freedesktop.org/wayland/libinput
 clone_or_update git://anongit.freedesktop.org/wayland/weston
 

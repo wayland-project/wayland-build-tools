@@ -113,6 +113,9 @@ compile
 gen wayland-protocols
 compile
 
+gen libwacom
+compile
+
 gen libinput
 compile
 
