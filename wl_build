@@ -70,6 +70,14 @@ gen libxkbcommon \
     --disable-x11
 compile
 
+llvm_drivers=swrast,nouveau,r300,r600
+vga_pci=$(lspci | grep VGA | head -n1)
+vga_name=${vga_pci#*controller: }
+vga_manu=${vga_name%% *}
+if [ "${vga_manu}" = "NVIDIA" ]; then
+	llvm_drivers=swrast,nouveau
+fi
+
 echo
 echo "mesa"
 cd $WLROOT/mesa
@@ -82,7 +90,7 @@ git clean -xfd
 	--enable-shared-glapi \
 	--disable-llvm-shared-libs \
 	--disable-dri3 \
-	--with-gallium-drivers=swrast,nouveau,r300,r600
+	--with-gallium-drivers=$llvm_drivers
 compile
 
 
