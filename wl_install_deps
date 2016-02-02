@@ -17,6 +17,7 @@ sudo apt-get -y install libpam0g-dev
 sudo apt-get -y install libunwind8-dev
 sudo apt-get -y install libpciaccess-dev
 sudo apt-get -y install libudev-dev
+sudo apt-get -y install libgudev-1.0-dev
 sudo apt-get -y install llvm-dev
 sudo apt-get -y install python-mako
 
