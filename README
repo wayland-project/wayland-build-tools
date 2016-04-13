@@ -1,1 +1,53 @@
-See http://wayland.freedesktop.org/building.html for documentation
+Wayland Build Tools
+
+These are scripts that automate the standard Wayland build and installation
+directions (http://wayland.freedesktop.org/building.html), and take care of
+downloading and building the various upstream components needed for Wayland,
+the Weston compositor, and Xwayland.
+
+These scripts and instructions are tested with a fresh installation of Ubuntu,
+and should work well for any Debian-based distro that uses APT.
+
+
+Step 1: Install git, and clone the wayland-build-tools repository
+
+        apt-get install -y git
+        git clone git://anongit.freedesktop.org/wayland/wayland-build-tools
+
+Where you place this repository is up to you.
+
+
+Step 2: Prepare expected directories
+
+        mkdir ~/Wayland # sources and builds will be here
+        mkdir -p ~/.config/wayland-build-tools
+        cp wl_defines.sh ~/.config/wayland-build-tools/
+
+You can change these directories if you wish, but these are the defaults
+and you'll need to edit the scripts to match. See WL_ROOT and WLD in
+wl_defines.sh.
+
+
+Step 3: Install packaged build dependencies
+
+        ./wl_install_deps
+
+
+Step 4: Clone the necessary repositories
+
+        ./wl_clone
+
+
+Step 5: Build upstream dependencies, Wayland, and Weston
+
+        ./wl_build
+
+
+Step 6: Run Weston
+
+        source ~/.config/wayland-build-tools/wl_defines.sh
+        weston
+
+
+Build scripts and configuration for other distros are welcome. For more
+details, see https://blogs.s-osg.org/kick-waylands-tires-wayland-build-tools.
