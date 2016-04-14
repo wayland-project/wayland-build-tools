@@ -3,7 +3,7 @@
 . $HOME/.config/wayland-build-tools/wl_defines.sh
 
 # generic build dependencies for ubuntu
-sudo apt-get -y install autoconf automake bison debhelper dpkg-dev flex
+sudo apt-get -y install autoconf automake bison debhelper dpkg-dev flex libtool
 sudo apt-get -y install pkg-config quilt python-libxml2
 
 # wayland/weston specific stuff
@@ -20,6 +20,13 @@ sudo apt-get -y install libudev-dev
 sudo apt-get -y install libgudev-1.0-dev
 sudo apt-get -y install llvm-dev
 sudo apt-get -y install python-mako
+sudo apt-get -y install libxml2-dev
+sudo apt-get -y install libpng-dev
+sudo apt-get -y install libglib2.0-dev
+sudo apt-get -y install libgcrypt20-dev
+sudo apt-get -y install x11proto-scrnsaver-dev
+sudo apt-get -y install libxfont-dev
+sudo apt-get -y install libedit-dev
 
 # xwayland specific stuff
 if [ ${INCLUDE_XWAYLAND} ]; then
