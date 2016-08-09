@@ -77,5 +77,6 @@ if [ ${INCLUDE_XWAYLAND} ]; then
 	clone_or_update git://anongit.freedesktop.org/xorg/proto/xf86driproto
 	clone_or_update git://anongit.freedesktop.org/xorg/proto/randrproto
 	clone_or_update git://anongit.freedesktop.org/xorg/lib/libxkbfile
+	clone_or_update git://anongit.freedesktop.org/xorg/lib/libXfont
 	clone_or_update git://anongit.freedesktop.org/xorg/xserver
 fi

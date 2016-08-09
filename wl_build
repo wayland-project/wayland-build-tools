@@ -166,6 +166,9 @@ if [ ${INCLUDE_XWAYLAND} ]; then
 	gen libxkbfile
 	compile
 
+	gen libXfont
+	compile
+
 	echo
 	echo "xserver"
 	cd $WLROOT/xserver
