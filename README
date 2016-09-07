@@ -1,4 +1,5 @@
 Wayland Build Tools
+-------------------
 
 These are scripts that automate the standard Wayland build and installation
 directions (http://wayland.freedesktop.org/building.html), and take care of
@@ -48,6 +49,38 @@ Step 6: Run Weston
         source ~/.config/wayland-build-tools/wl_defines.sh
         weston
 
-
 Build scripts and configuration for other distros are welcome. For more
 details, see https://blogs.s-osg.org/kick-waylands-tires-wayland-build-tools.
+
+
+Wayland Uninstalled
+-------------------
+
+We now also include a helper script, wl_uninstalled, to build and work with an
+uninstalled wayland/weston environment comprised of the following repositories:
+
+wayland
+wayland-protocols
+libinput
+weston
+
+The wl_uninstalled script provides a shell environment in which all build and
+run run-time dependencies are resolved in such a way that the uninstalled
+versions of the above projects take precedence.
+
+Quick instructions:
+
+Let's use Weston as an example although other wayland-based projects should work
+as well.
+
+* Edit a local copy of the script to make $WLD point to the base directory
+  where your repositories are (make sure to use the absolute paths). You can
+  also set the WLD environment variable to a path of your choice and leave
+  the script untouched. Then, after executing the script, issue the following
+  commands to have everything built and weston running from the uninstalled
+  environment.
+
+    cd $WLD
+    for i in wayland wayland-protocols libinput weston; do
+    cd $i && ./autogen.sh && make && cd ..; done
+    weston &
