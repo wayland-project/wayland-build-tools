@@ -67,6 +67,7 @@ compile
 
 gen libxkbcommon \
 	--with-xkb-config-root=/usr/share/X11/xkb \
+	--with-x-locale-root=/usr/share/X11/locale \
 	--disable-x11
 compile
 
