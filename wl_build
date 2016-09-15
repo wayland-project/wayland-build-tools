@@ -3,7 +3,7 @@
 . $HOME/.config/wayland-build-tools/wl_defines.sh
 
 if [ ! -e $WLROOT ]; then
-    exit 1
+	exit 1
 fi
 
 # Bail if errors
@@ -67,7 +67,7 @@ compile
 
 gen libxkbcommon \
 	--with-xkb-config-root=/usr/share/X11/xkb \
-    --disable-x11
+	--disable-x11
 compile
 
 llvm_drivers=swrast,nouveau,r300,r600
@@ -197,7 +197,7 @@ git clean -xfd
 	--with-xserver-path=$WLD/bin/Xwayland \
 	--enable-setuid-install=no \
 	--enable-clients \
-    --enable-headless-compositor \
+	--enable-headless-compositor \
 	--enable-demo-clients-install
 compile
 #distcheck
