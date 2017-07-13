@@ -1,10 +1,22 @@
 #!/bin/bash
 
+source /etc/lsb-release
 . $HOME/.config/wayland-build-tools/wl_defines.sh
 
 # generic build dependencies for ubuntu
 sudo apt-get -y install autoconf automake bison debhelper dpkg-dev flex libtool
 sudo apt-get -y install pkg-config quilt python-libxml2
+
+# libinput needs meson
+if [ "$DISTRIB_CODENAME" = "xenial" ]; then
+	# Xenial (16.04) has a too-old meson
+	# So need to install from security.ubuntu.com
+	apt-get -y install ninja-build=1.7.1-1~ubuntu16.04.1
+	apt-get -y install meson=0.40.1-1~ubuntu16.04.1
+else
+	sudo apt-get -y install meson
+	sudo apt-get -y install ninja
+fi
 
 # wayland/weston specific stuff
 sudo apt-get -y install xmlto

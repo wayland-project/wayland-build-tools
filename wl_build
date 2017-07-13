@@ -71,7 +71,7 @@ gen libxkbcommon \
 	--disable-x11
 compile
 
-llvm_drivers=swrast,nouveau,r300,r600
+llvm_drivers=swrast,nouveau,r300
 vga_pci=$(lspci | grep VGA | head -n1)
 vga_name=${vga_pci#*controller: }
 vga_manu=${vga_name%% *}
@@ -116,8 +116,17 @@ compile
 gen libwacom
 compile
 
-gen libinput
-compile
+echo
+echo libinput
+cd $WLROOT/libinput
+rm -rf $WLROOT/libinput/builddir/
+mkdir $WLROOT/libinput/builddir/
+echo "meson --prefix=$WLD builddir/"
+meson --prefix=$WLD -Ddebug-gui=false builddir/
+ninja -C builddir/
+ninja -C builddir/ install
+# sudo udevadm hwdb --update
+
 
 if [ ${INCLUDE_XWAYLAND} ]; then
 	if [ ${WL_BITS} = 32 ]; then
@@ -128,6 +137,7 @@ if [ ${INCLUDE_XWAYLAND} ]; then
 	gen xproto
 	compile
 
+	rm -rf $WLROOT/libepoxy/m4
 	gen libepoxy
 	compile
 
