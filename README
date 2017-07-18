@@ -8,11 +8,12 @@ the Weston compositor, and Xwayland.
 
 These scripts and instructions are tested with a fresh installation of Ubuntu,
 and should work well for any Debian-based distro that uses APT.
+These works on Fedora (it might works on RedHat-based distro) with RPM.
 
 
 Step 1: Install git, and clone the wayland-build-tools repository
 
-        apt-get install -y git
+        apt-get/rpm install -y git
         git clone git://anongit.freedesktop.org/wayland/wayland-build-tools
 
 Where you place this repository is up to you.
@@ -31,17 +32,17 @@ wl_defines.sh.
 
 Step 3: Install packaged build dependencies
 
-        ./wl_install_deps
+        ./wl_install_deps.sh
 
 
 Step 4: Clone the necessary repositories
 
-        ./wl_clone
+        ./wl_clone.sh
 
 
 Step 5: Build upstream dependencies, Wayland, and Weston
 
-        ./wl_build
+        ./wl_build.sh
 
 
 Step 6: Run Weston
