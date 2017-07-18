@@ -7,7 +7,7 @@ if hash apt-get 2>/dev/null; then
     INSTALL="sudo apt-get install -y"
     OS="deb"
 elif hash rpm 2>/dev/null; then
-    INSTALL="sudo yum install -q"
+    INSTALL="sudo yum install -qy"
     OS="rh"
 else
     echo "Distrib not compatible"
