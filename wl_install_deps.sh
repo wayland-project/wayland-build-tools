@@ -46,6 +46,7 @@ else
     $INSTALL libXfont2-devel libpng-devel mtdev-devel libpciaccess-devel
     $INSTALL kernel-devel kernel-headers pam-devel systemd-devel
     $INSTALL libgudev-devel glib2-devel libgcrypt-devel libunwind-devel
+    $INSTALL libXScrnSaver-devel
 fi
 
 # xwayland specific stuff
