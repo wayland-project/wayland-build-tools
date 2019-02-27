@@ -12,7 +12,7 @@ XWAYLAND=${WLROOT}/install/bin/Xwayland
 export DISTCHECK_CONFIGURE_FLAGS="--with-xserver-path=$XWAYLAND"
 
 export LD_LIBRARY_PATH=$WLD/lib
-export PKG_CONFIG_PATH=$WLD/lib/pkgconfig/:$WLD/share/pkgconfig/
+export PKG_CONFIG_PATH=$WLD/lib/pkgconfig/:$WLD/share/pkgconfig/:$WLD/lib/x86_64-linux-gnu/pkgconfig
 export PATH=$WLD/bin:$PATH
 export ACLOCAL_PATH="$WLD/share/aclocal"
 export ACLOCAL="aclocal -I $ACLOCAL_PATH"

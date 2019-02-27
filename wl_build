@@ -56,10 +56,7 @@ compile
 gen libxcb
 compile
 
-gen presentproto
-compile
-
-gen dri3proto
+gen xorgproto
 compile
 
 gen libxshmfence
@@ -84,6 +81,7 @@ echo "mesa"
 cd $WLROOT/mesa
 git clean -xfd
 ./autogen.sh --prefix=$WLD \
+	--enable-autotools \
 	--enable-gles2 \
 	--with-egl-platforms=x11,wayland,drm \
 	--enable-gbm \
@@ -122,7 +120,7 @@ cd $WLROOT/libinput
 rm -rf $WLROOT/libinput/builddir/
 mkdir $WLROOT/libinput/builddir/
 echo "meson --prefix=$WLD builddir/"
-meson --prefix=$WLD -Ddebug-gui=false builddir/
+meson --prefix=$WLD -Ddocumentation=false -Ddebug-gui=false builddir/
 ninja -C builddir/
 ninja -C builddir/ install
 # sudo udevadm hwdb --update
@@ -134,44 +132,11 @@ if [ ${INCLUDE_XWAYLAND} ]; then
 		compile
 	fi
 
-	gen xproto
-	compile
-
 	rm -rf $WLROOT/libepoxy/m4
 	gen libepoxy
 	compile
 
-	gen glproto
-	compile
-
-	gen xcmiscproto
-	compile
-
 	gen libxtrans
-	compile
-
-	gen bigreqsproto
-	compile
-
-	gen xextproto
-	compile
-
-	gen fontsproto
-	compile
-
-	gen videoproto
-	compile
-
-	gen recordproto
-	compile
-
-	gen resourceproto
-	compile
-
-	gen xf86driproto
-	compile
-
-	gen randrproto
 	compile
 
 	gen libxkbfile
@@ -204,6 +169,7 @@ echo "weston"
 cd $WLROOT/weston
 git clean -xfd
 ./autogen.sh --prefix=$WLD \
+	--enable-autotools \
 	--with-cairo=image \
 	--with-xserver-path=$WLD/bin/Xwayland \
 	--enable-setuid-install=no \
