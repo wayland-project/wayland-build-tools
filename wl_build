@@ -120,7 +120,7 @@ cd $WLROOT/libinput
 rm -rf $WLROOT/libinput/builddir/
 mkdir $WLROOT/libinput/builddir/
 echo "meson --prefix=$WLD builddir/"
-meson --prefix=$WLD -Ddebug-gui=false builddir/
+meson --prefix=$WLD -Ddocumentation=false -Ddebug-gui=false builddir/
 ninja -C builddir/
 ninja -C builddir/ install
 # sudo udevadm hwdb --update
