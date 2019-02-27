@@ -81,6 +81,7 @@ echo "mesa"
 cd $WLROOT/mesa
 git clean -xfd
 ./autogen.sh --prefix=$WLD \
+	--enable-autotools \
 	--enable-gles2 \
 	--with-egl-platforms=x11,wayland,drm \
 	--enable-gbm \
@@ -168,6 +169,7 @@ echo "weston"
 cd $WLROOT/weston
 git clean -xfd
 ./autogen.sh --prefix=$WLD \
+	--enable-autotools \
 	--with-cairo=image \
 	--with-xserver-path=$WLD/bin/Xwayland \
 	--enable-setuid-install=no \
