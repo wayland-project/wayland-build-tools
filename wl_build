@@ -56,10 +56,7 @@ compile
 gen libxcb
 compile
 
-gen presentproto
-compile
-
-gen dri3proto
+gen xorgproto
 compile
 
 gen libxshmfence
@@ -134,44 +131,11 @@ if [ ${INCLUDE_XWAYLAND} ]; then
 		compile
 	fi
 
-	gen xproto
-	compile
-
 	rm -rf $WLROOT/libepoxy/m4
 	gen libepoxy
 	compile
 
-	gen glproto
-	compile
-
-	gen xcmiscproto
-	compile
-
 	gen libxtrans
-	compile
-
-	gen bigreqsproto
-	compile
-
-	gen xextproto
-	compile
-
-	gen fontsproto
-	compile
-
-	gen videoproto
-	compile
-
-	gen recordproto
-	compile
-
-	gen resourceproto
-	compile
-
-	gen xf86driproto
-	compile
-
-	gen randrproto
 	compile
 
 	gen libxkbfile
